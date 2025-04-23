@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
 import { useState } from "react";
 
-// Define project data
+// Define project data, including QuizWhiz
 const projectsData = [
   {
     title: "EJ-InsightX",
@@ -28,6 +28,14 @@ const projectsData = [
     description: "Election data visualization web app that presents voting patterns, demographic analysis, and result projections through intuitive interactive charts and geographical maps.",
     image: "/placeholder.svg",
     tags: ["Django", "D3.js", "Data Analysis", "Visualization"],
+    github: "#",
+    demo: "#",
+  },
+  {
+    title: "QuizWhiz",
+    description: "A robust quiz and competition platform with college/school-wide and classroom features. Designed the backend and logic; used for interschool quizzes (mock UN, science olympiads, etc).",
+    image: "/placeholder.svg",
+    tags: ["Python", "Django", "Quiz Platform", "Education"],
     github: "#",
     demo: "#",
   },

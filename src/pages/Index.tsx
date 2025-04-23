@@ -8,6 +8,7 @@ import { ProjectsSection } from "@/components/projects-section";
 import { EducationSection } from "@/components/education-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
+import { ScrollToTopButton } from "@/components/scroll-to-top-btn";
 
 const Index = () => {
   // Add smooth scrolling for Safari
@@ -39,14 +40,13 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background text-foreground antialiased">
       <Navbar />
-      
+      <ScrollToTopButton />
       <HeroSection />
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
       <EducationSection />
       <ContactSection />
-      
       <Footer />
     </main>
   );

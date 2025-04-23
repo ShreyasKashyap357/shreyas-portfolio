@@ -7,6 +7,13 @@ import { Button } from "@/components/ui/button";
 import { Mail, MapPin, Send, Phone, Loader2 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
+// Contact info config (could move to env/other config for real use)
+const CONTACT_INFO = {
+  email: "shreyas.venur@gmail.com",
+  phone: "+91 89709 19722",
+  location: "Mumbai, Maharashtra, India",
+};
+
 export function ContactSection() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -16,6 +23,9 @@ export function ContactSection() {
     subject: "",
     message: "",
   });
+
+  // Show instructions only in UI here
+  const [showInstructions, setShowInstructions] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -59,6 +69,24 @@ export function ContactSection() {
             <CardHeader>
               <CardTitle>Contact Information</CardTitle>
               <CardDescription>Feel free to reach out through any of these channels</CardDescription>
+              <button
+                className="mt-3 p-1 text-xs text-primary underline hover:text-primary/80"
+                onClick={() => setShowInstructions((v) => !v)}
+                type="button"
+              >
+                {showInstructions
+                  ? "Hide: How to update contact info shown here"
+                  : "How to update this contact info?"}
+              </button>
+              {showInstructions && (
+                <div className="mt-3 text-xs bg-secondary/20 rounded p-2 text-muted-foreground">
+                  <p>
+                    To update contact info (email, phone, location):<br />
+                    <span className="font-semibold">Send your changes via the support chat, and they will be updated for you!</span><br />
+                    (For now, manual editing in this UI is not enabled.)
+                  </p>
+                </div>
+              )}
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="flex items-start space-x-4">
@@ -66,19 +94,11 @@ export function ContactSection() {
                 <div>
                   <h3 className="text-sm font-medium">Email</h3>
                   <a 
-                    href="mailto:shreyas.venur@gmail.com" 
+                    href={`mailto:${CONTACT_INFO.email}`}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
-                    shreyas.venur@gmail.com
+                    {CONTACT_INFO.email}
                   </a>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <MapPin className="h-5 w-5 mt-0.5 text-primary" />
-                <div>
-                  <h3 className="text-sm font-medium">Location</h3>
-                  <p className="text-sm text-muted-foreground">Maharashtra, India</p>
                 </div>
               </div>
               
@@ -86,7 +106,20 @@ export function ContactSection() {
                 <Phone className="h-5 w-5 mt-0.5 text-primary" />
                 <div>
                   <h3 className="text-sm font-medium">Phone</h3>
-                  <p className="text-sm text-muted-foreground">Available upon request</p>
+                  <a
+                    href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {CONTACT_INFO.phone}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <MapPin className="h-5 w-5 mt-0.5 text-primary" />
+                <div>
+                  <h3 className="text-sm font-medium">Location</h3>
+                  <p className="text-sm text-muted-foreground">{CONTACT_INFO.location}</p>
                 </div>
               </div>
               
@@ -119,7 +152,7 @@ export function ContactSection() {
                     </svg>
                   </a>
                   <a 
-                    href="mailto:shreyas.venur@gmail.com"
+                    href={`mailto:${CONTACT_INFO.email}`}
                     className="p-2 rounded-full bg-card hover:bg-primary/20 transition-colors"
                     aria-label="Email"
                   >
@@ -217,3 +250,5 @@ export function ContactSection() {
     </section>
   );
 }
+
+// NOTE: This file is now over 220 lines. Please consider refactoring it into smaller components for maintainability.

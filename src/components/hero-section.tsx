@@ -16,7 +16,7 @@ export function HeroSection() {
       <div className="container px-4 md:px-6 flex flex-col items-center text-center">
         <div className="flex flex-col items-center space-y-4 animate-fade-in">
           <img
-            src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
+            src="https://github.com/ShreyasKashyap357/my-portfolio/raw/main/My%20Photo%20Compressed%20Resized.jpg"
             alt="Shreyas Kashyap"
             className="w-32 h-32 rounded-full object-cover border-4 border-primary shadow-md mb-2"
           />
@@ -36,9 +36,15 @@ export function HeroSection() {
           </p>
           
           <div className="flex justify-center mt-8">
-            <Button className="group" size="lg">
-              <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" />
-              Download Resume
+            <Button className="group" size="lg" asChild>
+              <a
+                href="https://github.com/ShreyasKashyap357/my-portfolio/raw/main/My_Resume_LaTeX.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" />
+                Download Resume
+              </a>
             </Button>
           </div>
           
@@ -60,3 +66,4 @@ export function HeroSection() {
     </section>
   );
 }
+

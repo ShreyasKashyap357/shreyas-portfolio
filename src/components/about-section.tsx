@@ -19,7 +19,7 @@ export function AboutSection() {
               <div className="text-center">
                 <h3 className="text-xl font-medium mb-2">Who Am I</h3>
                 <p className="text-muted-foreground">
-                  An enthusiastic Computer Science graduate with a passion for data science, machine learning, 
+                  I am a pre-final year Computer Science student, passionate about data science, machine learning,
                   and creating impactful technological solutions.
                 </p>
               </div>
@@ -53,7 +53,7 @@ export function AboutSection() {
         
         <div className="mt-12 max-w-3xl mx-auto text-center">
           <p className="text-muted-foreground">
-            I'm a detail-oriented professional with a strong foundation in computer science and a growing expertise in 
+            I'm a detail-oriented student with a strong foundation in computer science and a growing expertise in 
             data analytics and machine learning. My journey is driven by curiosity and a desire to convert raw data into
             actionable intelligence that can enhance decision-making processes and create innovative solutions.
           </p>
