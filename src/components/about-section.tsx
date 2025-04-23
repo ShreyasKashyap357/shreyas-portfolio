@@ -19,7 +19,7 @@ export function AboutSection() {
               <div className="text-center">
                 <h3 className="text-xl font-medium mb-2">Who Am I</h3>
                 <p className="text-muted-foreground">
-                  I am a pre-final year Bahcelor of Technology Computer Science & Engineering student, passionate about data science, machine learning,
+                  I am a Pre-Final Year Bachelor of Technology Computer Science & Engineering Student, passionate about data science, machine learning,
                   and creating impactful technological solutions.
                 </p>
               </div>
