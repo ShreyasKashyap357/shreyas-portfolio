@@ -18,7 +18,7 @@ export function HeroSection() {
         <div className="flex flex-col items-center space-y-4 animate-fade-in">
           <Avatar className="w-32 h-32 border-4 border-primary shadow-md mb-2">
             <AvatarImage 
-              src="https://raw.githubusercontent.com/ShreyasKashyap357/shreyas-portfolio/main/My%20Photo%20Compressed%20Resized.jpg" 
+              src="https://raw.githubusercontent.com/ShreyasKashyap357/shreyas-portfolio/refs/heads/main/My%20Photo%20Compressed%20Resized.jpg?token=GHSAT0AAAAAADCWEYFRFFIDZQ7Z3X5ZBEZC2AI3HDQ" 
               alt="Shreyas Kashyap" 
             />
             <AvatarFallback>SK</AvatarFallback>
