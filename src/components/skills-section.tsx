@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -11,7 +11,6 @@ import {
   Wrench,
 } from "lucide-react";
 
-// Updated skill data with image URLs for official logos
 const newSkills = {
   languages: [
     { 
@@ -58,7 +57,11 @@ const newSkills = {
       level: 75 
     },
     { name: "Bash", icon: <Terminal size={24} />, level: 62 },
-    { name: "LaTeX", icon: <FileText size={24} />, level: 75 },
+    { 
+      name: "LaTeX",
+      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/latex/latex-original.svg",
+      level: 75 
+    },
   ],
   frameworks: [
     { 
@@ -76,6 +79,11 @@ const newSkills = {
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg",
       level: 77 
     },
+    {
+      name: "Flask",
+      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/flask/flask-original.svg",
+      level: 75
+    },
   ],
   tools: [
     { 
@@ -88,7 +96,6 @@ const newSkills = {
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg",
       level: 90 
     },
-    { name: "Visual Studio", icon: <Wrench size={24} />, level: 85 },
     { 
       name: "PyCharm",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/pycharm/pycharm-original.svg",
@@ -99,50 +106,98 @@ const newSkills = {
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/intellij/intellij-original.svg",
       level: 85 
     },
-    { name: "Excel", icon: <Wrench size={24} />, level: 91 },
-    { name: "Power BI", icon: <Wrench size={24} />, level: 85 },
+    {
+      name: "Excel",
+      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/microsoftoffice/microsoftoffice-plain.svg",
+      level: 91
+    },
+    {
+      name: "Power BI",
+      icon: "https://raw.githubusercontent.com/microsoft/PowerBI-Icons/main/SVG/Power-BI.svg",
+      level: 85
+    },
+    {
+      name: "PowerPoint",
+      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/microsoftoffice/microsoftoffice-plain.svg",
+      level: 85
+    },
+    {
+      name: "Word",
+      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/microsoftoffice/microsoftoffice-plain.svg",
+      level: 85
+    },
   ],
   libraries: [
-    { name: "pandas", icon: <FileText size={24} />, level: 90 },
-    { name: "NumPy", icon: <FileText size={24} />, level: 85 },
-    { name: "Matplotlib", icon: <FileText size={24} />, level: 80 },
-    { name: "seaborn", icon: <FileText size={24} />, level: 75 },
-    { name: "scikit-learn", icon: <FileText size={24} />, level: 85 },
-    { name: "TensorFlow", icon: <FileText size={24} />, level: 70 },
-    { name: "Plotly", icon: <FileText size={24} />, level: 75 },
-  ],
-  databases: [
-    { 
-      name: "MySQL",
-      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg",
-      level: 85 
+    {
+      name: "pandas",
+      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original.svg",
+      level: 90
     },
-    { 
-      name: "MongoDB",
-      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg",
-      level: 75 
+    {
+      name: "NumPy",
+      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg",
+      level: 85
+    },
+    {
+      name: "Matplotlib",
+      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/matplotlib/matplotlib-original.svg",
+      level: 80
+    },
+    {
+      name: "seaborn",
+      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/seaborn/seaborn-original.svg",
+      level: 75
+    },
+    {
+      name: "scikit-learn",
+      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/scikit-learn/scikit-learn-original.svg",
+      level: 85
+    },
+    {
+      name: "TensorFlow",
+      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg",
+      level: 70
+    },
+    {
+      name: "PyTorch",
+      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original.svg",
+      level: 75
+    },
+    {
+      name: "Keras",
+      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/keras/keras-original.svg",
+      level: 70
+    },
+    {
+      name: "Plotly",
+      icon: "https://raw.githubusercontent.com/plotly/plotly.js/master/src/assets/plotly_logo.svg",
+      level: 75
     },
   ],
 };
 
-const SkillCard = ({ name, icon, level }: { name: string; icon: string | JSX.Element; level: number }) => (
+const SkillCard = ({ name, icon, level, showLevel = false }: { name: string; icon: string | JSX.Element; level: number; showLevel?: boolean }) => (
   <Card className="overflow-hidden transition-all hover:shadow-lg">
     <CardContent className="p-4 flex flex-col items-center gap-2">
-      <div className="w-12 h-12 flex items-center justify-center">
+      <div className="w-16 h-16 flex items-center justify-center">
         {typeof icon === 'string' ? (
-          <img src={icon} alt={name} className="w-10 h-10" />
+          <img src={icon} alt={name} className="w-14 h-14" />
         ) : (
           icon
         )}
       </div>
       <h3 className="font-medium text-center">{name}</h3>
-      <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-        <div
-          className="h-full bg-primary rounded-full transition-all duration-500"
-          style={{ width: `${level}%` }}
-        />
-      </div>
-      <span className="text-sm text-muted-foreground">{level}%</span>
+      {showLevel && (
+        <>
+          <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-primary rounded-full transition-all duration-500"
+              style={{ width: `${level}%` }}
+            />
+          </div>
+          <span className="text-sm text-muted-foreground">{level}%</span>
+        </>
+      )}
     </CardContent>
   </Card>
 );
@@ -182,7 +237,7 @@ export function SkillsSection() {
           <TabsContent value="all">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {Object.values(newSkills).flat().map((skill) => (
-                <SkillCard key={skill.name} {...skill} />
+                <SkillCard key={skill.name} {...skill} showLevel={false} />
               ))}
             </div>
           </TabsContent>
@@ -191,7 +246,7 @@ export function SkillsSection() {
             <TabsContent key={category} value={category}>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {skills.map((skill) => (
-                  <SkillCard key={skill.name} {...skill} />
+                  <SkillCard key={skill.name} {...skill} showLevel={true} />
                 ))}
               </div>
             </TabsContent>
