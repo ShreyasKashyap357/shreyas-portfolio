@@ -2,10 +2,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Award, School, Calendar } from "lucide-react";
 
-// Strictly follow your provided education, achievements, certifications
 const educationData = [
   {
-    degree: "Bachelor of Technology in Computer Science and Engineering, CGPA: 8.07",
+    degree: "Bachelor of Technology in Computer Science and Engineering",
+    grades: "CGPA: 8.07",
     institution: "Lovely Professional University",
     duration: "Aug 2022 - Present",
     location: "Phagwara, IN",
@@ -15,7 +15,8 @@ const educationData = [
     icon: <School className="h-10 w-10 text-primary" />,
   },
   {
-    degree: "Senior Secondary School Certificate, 70.67%",
+    degree: "Senior Secondary School Certificate",
+    grades: "70.67%",
     institution: "Lakshya Institute",
     duration: "Apr 2021 - Apr 2022",
     location: "Mumbai, IN",
@@ -24,7 +25,8 @@ const educationData = [
     icon: <School className="h-10 w-10 text-primary" />,
   },
   {
-    degree: "Secondary School Certificate, 96.2%",
+    degree: "Secondary School Certificate",
+    grades: "96.2%",
     institution: "Pawar Public School",
     duration: "Apr 2019 - Mar 2020",
     location: "Mumbai, IN",
@@ -34,7 +36,6 @@ const educationData = [
   },
 ];
 
-// Certifications
 const certificationsData = [
   {
     title: "Generative AI & ChatGPT",
@@ -58,7 +59,6 @@ const certificationsData = [
   }
 ];
 
-// Achievements sorted by date (most recent first)
 const achievementsData = [
   {
     title: "Quizzes",
@@ -82,7 +82,7 @@ const achievementsData = [
   },
   {
     title: "Bharat Ko Jano Quiz Competition 2017",
-    body: "Second Prize, Branch Level",
+    body: "Second Prize, Powai-Chandivali Branch",
     period: "11th Nov. 2017"
   },
   {
@@ -124,6 +124,9 @@ export function EducationSection() {
                 </div>
                 <div>
                   <CardTitle className="text-lg">{education.degree}</CardTitle>
+                  <p className="text-sm font-medium text-primary mt-1">
+                    {education.grades}
+                  </p>
                   <p className="text-sm font-medium text-muted-foreground">
                     {education.institution}
                   </p>
@@ -144,7 +147,6 @@ export function EducationSection() {
           ))}
         </div>
 
-        {/* Certifications Card */}
         <Card className="border border-border/40 bg-card/50 backdrop-blur-sm max-w-3xl mx-auto mb-8">
           <CardHeader>
             <CardTitle className="text-xl flex items-center gap-2">
@@ -173,7 +175,6 @@ export function EducationSection() {
           </CardContent>
         </Card>
 
-        {/* Achievements Card */}
         <Card className="border border-border/40 bg-card/50 backdrop-blur-sm max-w-3xl mx-auto">
           <CardHeader>
             <CardTitle className="text-xl flex items-center gap-2">

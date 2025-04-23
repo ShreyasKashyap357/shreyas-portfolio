@@ -1,4 +1,3 @@
-
 import { ThemeToggle } from "./theme-toggle";
 
 export function Footer() {
@@ -44,7 +43,7 @@ export function Footer() {
                 </svg>
               </a>
               <a 
-                href="https://linkedin.com/in/"
+                href="https://linkedin.com/in/shreyaskashyap2004"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-card hover:bg-primary/20 transition-colors"

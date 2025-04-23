@@ -1,6 +1,5 @@
-
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { Download, Video } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 export function HeroSection() {
@@ -16,9 +15,9 @@ export function HeroSection() {
       
       <div className="container px-4 md:px-6 flex flex-col items-center text-center">
         <div className="flex flex-col items-center space-y-4 animate-fade-in">
-          <Avatar className="w-32 h-32 border-4 border-primary shadow-md mb-2">
+          <Avatar className="w-48 h-48 border-4 border-primary shadow-md mb-2">
             <AvatarImage 
-              src="https://raw.githubusercontent.com/ShreyasKashyap357/shreyas-portfolio/refs/heads/main/My%20Photo%20Compressed%20Resized.jpg?token=GHSAT0AAAAAADCWEYFRFFIDZQ7Z3X5ZBEZC2AI3HDQ" 
+              src="https://github.com/ShreyasKashyap357/shreyas-portfolio/raw/main/My%20Photo%20Compressed%20Resized.jpg" 
               alt="Shreyas Kashyap" 
             />
             <AvatarFallback>SK</AvatarFallback>
@@ -39,7 +38,7 @@ export function HeroSection() {
             Turning data into meaningful insights and building intelligent solutions.
           </p>
           
-          <div className="flex justify-center mt-8">
+          <div className="flex justify-center gap-4 mt-8">
             <Button className="group" size="lg" asChild>
               <a
                 href="https://raw.githubusercontent.com/ShreyasKashyap357/shreyas-portfolio/main/My_Resume_LaTeX.pdf"
@@ -48,6 +47,16 @@ export function HeroSection() {
               >
                 <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" />
                 Download Resume
+              </a>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <a
+                href="https://youtu.be/your-video-id"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Video className="mr-2 h-4 w-4" />
+                Watch Video CV
               </a>
             </Button>
           </div>

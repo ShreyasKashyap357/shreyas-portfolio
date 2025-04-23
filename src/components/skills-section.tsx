@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
@@ -44,18 +43,16 @@ const newSkills = {
     { name: "Power BI", icon: <Wrench size={16} />, level: 85 },
   ],
   libraries: [
-    { name: "pandas", icon: <FileText size={16} />, level: 90 },
-    { name: "NumPy", icon: <FileText size={16} />, level: 85 },
-    { name: "Matplotlib", icon: <FileText size={16} />, level: 80 },
-    { name: "seaborn", icon: <FileText size={16} />, level: 75 },
-    { name: "scikit-learn", icon: <FileText size={16} />, level: 85 },
-    { name: "TensorFlow", icon: <FileText size={16} />, level: 70 },
-    { name: "Plotly", icon: <FileText size={16} />, level: 68 },
+    { name: "pandas", icon: <FileText size={20} />, level: 90 },
+    { name: "NumPy", icon: <FileText size={20} />, level: 85 },
+    { name: "Matplotlib", icon: <FileText size={20} />, level: 80 },
+    { name: "seaborn", icon: <FileText size={20} />, level: 75 },
+    { name: "scikit-learn", icon: <FileText size={20} />, level: 85 },
+    { name: "TensorFlow", icon: <FileText size={20} />, level: 70 },
   ],
   databases: [
-    { name: "MySQL", icon: <Database size={16} />, level: 85 },
-    { name: "MongoDB", icon: <Database size={16} />, level: 75 },
-    { name: "PostgreSQL", icon: <Database size={16} />, level: 78 },
+    { name: "MySQL", icon: <Database size={20} />, level: 85 },
+    { name: "MongoDB", icon: <Database size={20} />, level: 75 },
   ],
 };
 
@@ -183,4 +180,3 @@ export function SkillsSection() {
     </section>
   );
 }
-
