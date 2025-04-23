@@ -7,7 +7,7 @@ const educationData = [
   {
     degree: "Bachelor of Technology in Computer Science and Engineering, CGPA: 8.07",
     institution: "Lovely Professional University",
-    duration: "Aug 2022 -- Present",
+    duration: "Aug 2022 - Present",
     location: "Phagwara, IN",
     description:
       "Relevant coursework: Data Structures and Algorithms, Operating Systems, Database Management Systems, Artificial Intelligence, Computer Networks, Machine Learning",
@@ -17,7 +17,7 @@ const educationData = [
   {
     degree: "Senior Secondary School Certificate, 70.67%",
     institution: "Lakshya Institute",
-    duration: "Apr 2021 -- Apr 2022",
+    duration: "Apr 2021 - Apr 2022",
     location: "Mumbai, IN",
     description: "Key Subjects: Physics, Chemistry, Mathematics, Computer Science",
     achievements: [],
@@ -26,7 +26,7 @@ const educationData = [
   {
     degree: "Secondary School Certificate, 96.2%",
     institution: "Pawar Public School",
-    duration: "Apr 2019 -- Mar 2020",
+    duration: "Apr 2019 - Mar 2020",
     location: "Mumbai, IN",
     description: "",
     achievements: [],
@@ -39,22 +39,22 @@ const certificationsData = [
   {
     title: "Generative AI & ChatGPT",
     issuer: "Coursera",
-    period: "Jan--May 2024"
+    period: "Jan 2024 - May 2024"
   },
   {
     title: "Data Analysis and Algorithms",
     issuer: "Coursera",
-    period: "Jan--May 2024"
+    period: "Jan 2024 - May 2024"
   },
   {
     title: "Introduction to Probability Theory & Statistics",
     issuer: "NPTEL",
-    period: "Nov 2024"
+    period: "Jun 2024 - Nov 2024"
   },
   {
     title: "Cloud Computing",
     issuer: "NPTEL",
-    period: "Nov 2024"
+    period: "Jun 2024 - Nov 2024"
   }
 ];
 
@@ -63,7 +63,7 @@ const achievementsData = [
   {
     title: "Quizzes",
     body: "Participated in multiple college-wide quizzes; Achieved 1st, 2nd, and 3rd prizes",
-    period: "2022--Present"
+    period: "2022-Present"
   },
   {
     title: "National Competitive Exam",
@@ -98,7 +98,7 @@ const achievementsData = [
   {
     title: "Extracurricular Activities",
     body: "Participated in acting and drama competitions; Secured 1st and 2nd prizes",
-    period: "8th--10th Std."
+    period: "8th-10th Std."
   }
 ];
 
