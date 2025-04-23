@@ -1,5 +1,7 @@
+
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 export function HeroSection() {
   return (
@@ -14,11 +16,14 @@ export function HeroSection() {
       
       <div className="container px-4 md:px-6 flex flex-col items-center text-center">
         <div className="flex flex-col items-center space-y-4 animate-fade-in">
-          <img
-            src="https://raw.githubusercontent.com/ShreyasKashyap357/shreyas-portfolio/af01b3b2b1d1494aab6cbc5fbdf1d1c8b9cdbb7f/My%20Photo%20Compressed%20Resized.jpg?token=GHSAT0AAAAAADCWEYFRRMRXO5CPUMH2OHA42AI25YA"
-            alt="Shreyas Kashyap"
-            className="w-32 h-32 rounded-full object-cover border-4 border-primary shadow-md mb-2"
-          />
+          <Avatar className="w-32 h-32 border-4 border-primary shadow-md mb-2">
+            <AvatarImage 
+              src="https://raw.githubusercontent.com/ShreyasKashyap357/shreyas-portfolio/main/My%20Photo%20Compressed%20Resized.jpg" 
+              alt="Shreyas Kashyap" 
+            />
+            <AvatarFallback>SK</AvatarFallback>
+          </Avatar>
+          
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter">
             <span className="text-muted-foreground">Hello, I'm</span>{" "}
             <span className="text-primary">Shreyas Kashyap</span>
@@ -37,7 +42,7 @@ export function HeroSection() {
           <div className="flex justify-center mt-8">
             <Button className="group" size="lg" asChild>
               <a
-                href="https://github.com/ShreyasKashyap357/shreyas-portfolio/raw/main/My_Resume_LaTeX.pdf"
+                href="https://raw.githubusercontent.com/ShreyasKashyap357/shreyas-portfolio/main/My_Resume_LaTeX.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
