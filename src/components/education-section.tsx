@@ -38,24 +38,16 @@ const educationData = [
 
 const certificationsData = [
   {
-    title: "Generative AI & ChatGPT",
-    issuer: "Coursera",
-    period: "Jan 2024 - May 2024"
-  },
-  {
-    title: "Data Analysis and Algorithms",
-    issuer: "Coursera",
-    period: "Jan 2024 - May 2024"
-  },
-  {
     title: "Introduction to Probability Theory & Statistics",
     issuer: "NPTEL",
-    period: "Jun 2024 - Nov 2024"
+    period: "Jul 2023 - Oct 2023",
+    link: "https://archive.nptel.ac.in/content/noc/NOC23/SEM2/Ecertificates/111/noc23-ma77/Course/NPTEL23MA77S83790036920376872.pdf"
   },
   {
     title: "Cloud Computing",
     issuer: "NPTEL",
-    period: "Jun 2024 - Nov 2024"
+    period: "Jul 2024 - Oct 2024",
+    link: "https://archive.nptel.ac.in/content/noc/NOC24/SEM2/Ecertificates/106/noc24-cs118/Course/NPTEL24CS118S167020253304303798.pdf"
   }
 ];
 
@@ -68,7 +60,7 @@ const achievementsData = [
   {
     title: "National Competitive Exam",
     body: "Qualified for JEE (Advanced)",
-    period: "2022"
+    period: "7th Aug 2022"
   },
   {
     title: "Bharat Ko Jano Quiz Competition 2018",
@@ -113,18 +105,15 @@ export function EducationSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {educationData.map((education, index) => (
-            <Card
-              key={index}
-              className="border border-border/40 bg-card/50 backdrop-blur-sm overflow-hidden"
-            >
+            <Card key={index} className="border border-border/40 bg-card/50 backdrop-blur-sm overflow-hidden">
               <div className="h-2 bg-primary"></div>
-              <CardHeader className="flex flex-row items-center gap-4 pt-6">
-                <div className="p-2 bg-primary/10 rounded-full">
+              <CardHeader className="flex flex-col gap-4 pt-6">
+                <div className="p-2 bg-primary/10 rounded-full w-fit">
                   {education.icon}
                 </div>
                 <div>
                   <CardTitle className="text-lg">{education.degree}</CardTitle>
-                  <p className="text-sm font-medium text-primary mt-1">
+                  <p className="text-sm font-medium text-primary mt-2">
                     {education.grades}
                   </p>
                   <p className="text-sm font-medium text-muted-foreground">
@@ -156,9 +145,12 @@ export function EducationSection() {
           <CardContent>
             <div className="flex flex-col gap-2">
               {certificationsData.map((cert, index) => (
-                <div
+                <a
                   key={index}
-                  className="flex flex-col md:flex-row md:items-center justify-between py-2 px-1 border-b border-border/20 last:border-b-0"
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col md:flex-row md:items-center justify-between py-2 px-1 border-b border-border/20 last:border-b-0 hover:bg-accent/5 transition-colors"
                 >
                   <div>
                     <span className="font-semibold">{cert.title}</span>
@@ -169,7 +161,7 @@ export function EducationSection() {
                   <span className="text-xs text-muted-foreground md:ml-4 mt-1 md:mt-0 whitespace-nowrap">
                     {cert.period}
                   </span>
-                </div>
+                </a>
               ))}
             </div>
           </CardContent>
