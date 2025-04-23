@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -23,9 +22,6 @@ export function ContactSection() {
     subject: "",
     message: "",
   });
-
-  // Show instructions only in UI here
-  const [showInstructions, setShowInstructions] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -69,24 +65,6 @@ export function ContactSection() {
             <CardHeader>
               <CardTitle>Contact Information</CardTitle>
               <CardDescription>Feel free to reach out through any of these channels</CardDescription>
-              <button
-                className="mt-3 p-1 text-xs text-primary underline hover:text-primary/80"
-                onClick={() => setShowInstructions((v) => !v)}
-                type="button"
-              >
-                {showInstructions
-                  ? "Hide: How to update contact info shown here"
-                  : "How to update this contact info?"}
-              </button>
-              {showInstructions && (
-                <div className="mt-3 text-xs bg-secondary/20 rounded p-2 text-muted-foreground">
-                  <p>
-                    To update contact info (email, phone, location):<br />
-                    <span className="font-semibold">Send your changes via the support chat, and they will be updated for you!</span><br />
-                    (For now, manual editing in this UI is not enabled.)
-                  </p>
-                </div>
-              )}
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="flex items-start space-x-4">
@@ -250,5 +228,3 @@ export function ContactSection() {
     </section>
   );
 }
-
-// NOTE: This file is now over 220 lines. Please consider refactoring it into smaller components for maintainability.
