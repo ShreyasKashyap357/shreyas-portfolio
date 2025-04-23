@@ -3,13 +3,12 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Mail, MapPin, Send, Phone, Loader2 } from "lucide-react";
+import { Mail, MapPin, Send, Loader2 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
 // Contact info config (could move to env/other config for real use)
 const CONTACT_INFO = {
   email: "shreyas.venur@gmail.com",
-  phone: "+91 89709 19722",
   location: "Mumbai, Maharashtra, India",
 };
 
@@ -80,19 +79,6 @@ export function ContactSection() {
                 </div>
               </div>
               
-              <div className="flex items-start space-x-4">
-                <Phone className="h-5 w-5 mt-0.5 text-primary" />
-                <div>
-                  <h3 className="text-sm font-medium">Phone</h3>
-                  <a
-                    href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {CONTACT_INFO.phone}
-                  </a>
-                </div>
-              </div>
-
               <div className="flex items-start space-x-4">
                 <MapPin className="h-5 w-5 mt-0.5 text-primary" />
                 <div>
