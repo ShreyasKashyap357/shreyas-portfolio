@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
@@ -59,7 +58,7 @@ const newSkills = {
     { name: "Bash", icon: <Terminal size={24} />, level: 62 },
     { 
       name: "LaTeX",
-      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/latex/latex-original.svg",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/9/92/LaTeX_logo.svg",
       level: 75 
     },
   ],
@@ -108,22 +107,22 @@ const newSkills = {
     },
     {
       name: "Excel",
-      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/microsoftoffice/microsoftoffice-plain.svg",
+      icon: <FileText size={24} className="text-green-600" />,
       level: 91
     },
     {
       name: "Power BI",
-      icon: "https://raw.githubusercontent.com/microsoft/PowerBI-Icons/main/SVG/Power-BI.svg",
+      icon: <FileText size={24} className="text-yellow-500" />,
       level: 85
     },
     {
       name: "PowerPoint",
-      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/microsoftoffice/microsoftoffice-plain.svg",
+      icon: <FileText size={24} className="text-red-600" />,
       level: 85
     },
     {
       name: "Word",
-      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/microsoftoffice/microsoftoffice-plain.svg",
+      icon: <FileText size={24} className="text-blue-600" />,
       level: 85
     },
   ],
@@ -140,17 +139,17 @@ const newSkills = {
     },
     {
       name: "Matplotlib",
-      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/matplotlib/matplotlib-original.svg",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg",
       level: 80
     },
     {
       name: "seaborn",
-      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/seaborn/seaborn-original.svg",
+      icon: <FileText size={24} className="text-blue-400" />,
       level: 75
     },
     {
       name: "scikit-learn",
-      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/scikit-learn/scikit-learn-original.svg",
+      icon: <FileText size={24} className="text-orange-500" />,
       level: 85
     },
     {
@@ -170,7 +169,7 @@ const newSkills = {
     },
     {
       name: "Plotly",
-      icon: "https://raw.githubusercontent.com/plotly/plotly.js/master/src/assets/plotly_logo.svg",
+      icon: <FileText size={24} className="text-purple-500" />,
       level: 75
     },
   ],
@@ -178,15 +177,15 @@ const newSkills = {
 
 const SkillCard = ({ name, icon, level, showLevel = false }: { name: string; icon: string | JSX.Element; level: number; showLevel?: boolean }) => (
   <Card className="overflow-hidden transition-all hover:shadow-lg">
-    <CardContent className="p-4 flex flex-col items-center gap-2">
-      <div className="w-16 h-16 flex items-center justify-center">
+    <CardContent className="p-3 flex flex-col items-center gap-2">
+      <div className="w-12 h-12 flex items-center justify-center bg-background/80 rounded-lg backdrop-blur-sm">
         {typeof icon === 'string' ? (
-          <img src={icon} alt={name} className="w-14 h-14" />
+          <img src={icon} alt={name} className="w-10 h-10" />
         ) : (
           icon
         )}
       </div>
-      <h3 className="font-medium text-center">{name}</h3>
+      <h3 className="font-medium text-center text-sm">{name}</h3>
       {showLevel && (
         <>
           <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
@@ -195,7 +194,7 @@ const SkillCard = ({ name, icon, level, showLevel = false }: { name: string; ico
               style={{ width: `${level}%` }}
             />
           </div>
-          <span className="text-sm text-muted-foreground">{level}%</span>
+          <span className="text-xs text-muted-foreground">{level}%</span>
         </>
       )}
     </CardContent>
