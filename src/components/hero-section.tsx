@@ -15,7 +15,7 @@ export function HeroSection() {
       <div className="container px-4 md:px-6 flex flex-col items-center text-center">
         <div className="flex flex-col items-center space-y-4 animate-fade-in">
           <img
-            src="https://github.com/ShreyasKashyap357/shreyas-portfolio/raw/main/My%20Photo%20Compressed%20Resized.jpg"
+            src="https://raw.githubusercontent.com/ShreyasKashyap357/shreyas-portfolio/af01b3b2b1d1494aab6cbc5fbdf1d1c8b9cdbb7f/My%20Photo%20Compressed%20Resized.jpg?token=GHSAT0AAAAAADCWEYFRRMRXO5CPUMH2OHA42AI25YA"
             alt="Shreyas Kashyap"
             className="w-32 h-32 rounded-full object-cover border-4 border-primary shadow-md mb-2"
           />
