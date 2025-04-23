@@ -14,7 +14,12 @@ export function HeroSection() {
       </div>
       
       <div className="container px-4 md:px-6 flex flex-col items-center text-center">
-        <div className="animate-fade-in space-y-4">
+        <div className="flex flex-col items-center space-y-4 animate-fade-in">
+          <img
+            src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
+            alt="Shreyas Kashyap"
+            className="w-32 h-32 rounded-full object-cover border-4 border-primary shadow-md mb-2"
+          />
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter">
             <span className="text-muted-foreground">Hello, I'm</span>{" "}
             <span className="text-primary">Shreyas Kashyap</span>
