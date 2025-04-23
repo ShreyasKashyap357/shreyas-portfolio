@@ -1,13 +1,54 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from "react";
+import { Navbar } from "@/components/navbar";
+import { HeroSection } from "@/components/hero-section";
+import { AboutSection } from "@/components/about-section";
+import { SkillsSection } from "@/components/skills-section";
+import { ProjectsSection } from "@/components/projects-section";
+import { EducationSection } from "@/components/education-section";
+import { ContactSection } from "@/components/contact-section";
+import { Footer } from "@/components/footer";
 
 const Index = () => {
+  // Add smooth scrolling for Safari
+  useEffect(() => {
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
+        const hash = target.getAttribute('href');
+        if (!hash) return;
+        
+        const element = document.querySelector(hash);
+        if (element) {
+          e.preventDefault();
+          element.scrollIntoView({ behavior: 'smooth' });
+          
+          // Update URL without page scroll
+          window.history.pushState(null, '', hash);
+        }
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+    
+    return () => {
+      document.removeEventListener('click', handleAnchorClick);
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen bg-background text-foreground antialiased">
+      <Navbar />
+      
+      <HeroSection />
+      <AboutSection />
+      <SkillsSection />
+      <ProjectsSection />
+      <EducationSection />
+      <ContactSection />
+      
+      <Footer />
+    </main>
   );
 };
 
