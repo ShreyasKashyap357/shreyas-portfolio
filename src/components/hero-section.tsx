@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 
@@ -16,7 +15,7 @@ export function HeroSection() {
       <div className="container px-4 md:px-6 flex flex-col items-center text-center">
         <div className="flex flex-col items-center space-y-4 animate-fade-in">
           <img
-            src="https://github.com/ShreyasKashyap357/my-portfolio/raw/main/My%20Photo%20Compressed%20Resized.jpg"
+            src="https://github.com/ShreyasKashyap357/shreyas-portfolio/raw/main/My%20Photo%20Compressed%20Resized.jpg"
             alt="Shreyas Kashyap"
             className="w-32 h-32 rounded-full object-cover border-4 border-primary shadow-md mb-2"
           />
@@ -38,7 +37,7 @@ export function HeroSection() {
           <div className="flex justify-center mt-8">
             <Button className="group" size="lg" asChild>
               <a
-                href="https://github.com/ShreyasKashyap357/my-portfolio/raw/main/My_Resume_LaTeX.pdf"
+                href="https://github.com/ShreyasKashyap357/shreyas-portfolio/raw/main/My_Resume_LaTeX.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -66,4 +65,3 @@ export function HeroSection() {
     </section>
   );
 }
-

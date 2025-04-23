@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Award, School, Calendar } from "lucide-react";
@@ -59,22 +58,32 @@ const certificationsData = [
   }
 ];
 
-// Achievements
+// Achievements sorted by date (most recent first)
 const achievementsData = [
-  {
-    title: "National Competitive Exam",
-    body: "Qualified for JEE (Advanced)",
-    period: "2022"
-  },
   {
     title: "Quizzes",
     body: "Participated in multiple college-wide quizzes; Achieved 1st, 2nd, and 3rd prizes",
     period: "2022--Present"
   },
   {
-    title: "Extracurricular Activities",
-    body: "Participated in acting and drama competitions; Secured 1st and 2nd prizes",
-    period: "8th--10th Std."
+    title: "National Competitive Exam",
+    body: "Qualified for JEE (Advanced)",
+    period: "2022"
+  },
+  {
+    title: "Bharat Ko Jano Quiz Competition 2018",
+    body: "First Prize, Maharashtra-Konkan Region",
+    period: "14th Nov. 2018"
+  },
+  {
+    title: "United Nations Development Program (UNDP)",
+    body: "Best Position Paper, Represented Canada, PPSK Model United Nations",
+    period: "29th Jun. 2018"
+  },
+  {
+    title: "Bharat Ko Jano Quiz Competition 2017",
+    body: "Second Prize, Branch Level",
+    period: "11th Nov. 2017"
   },
   {
     title: "Enactment of a Scene",
@@ -87,20 +96,10 @@ const achievementsData = [
     period: "20th Dec. 2017"
   },
   {
-    title: "Bharat Ko Jano Quiz Competition 2017",
-    body: "Second Prize, Branch Level",
-    period: "11th Nov. 2017"
-  },
-  {
-    title: "Bharat Ko Jano Quiz Competition 2018",
-    body: "First Prize, Maharashtra-Konkan Region",
-    period: "14th Nov. 2018"
-  },
-  {
-    title: "United Nations Development Program (UNDP)",
-    body: "Best Position Paper, Represented Canada, PPSK Model United Nations",
-    period: "29th Jun. 2018"
-  },
+    title: "Extracurricular Activities",
+    body: "Participated in acting and drama competitions; Secured 1st and 2nd prizes",
+    period: "8th--10th Std."
+  }
 ];
 
 export function EducationSection() {
@@ -145,35 +144,8 @@ export function EducationSection() {
           ))}
         </div>
 
-        {/* Achievements Card */}
-        <Card className="border border-border/40 bg-card/50 backdrop-blur-sm max-w-3xl mx-auto mb-8">
-          <CardHeader>
-            <CardTitle className="text-xl flex items-center gap-2">
-              <Award className="h-5 w-5 text-primary" /> Achievements
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-col gap-2">
-              {achievementsData.map((ach, idx) => (
-                <div
-                  key={idx}
-                  className="flex flex-col md:flex-row md:items-center justify-between py-2 px-1 border-b border-border/20 last:border-b-0"
-                >
-                  <div>
-                    <span className="font-semibold">{ach.title}:</span>{" "}
-                    <span>{ach.body}</span>
-                  </div>
-                  <span className="text-xs text-muted-foreground md:ml-4 mt-1 md:mt-0 whitespace-nowrap">
-                    {ach.period}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
         {/* Certifications Card */}
-        <Card className="border border-border/40 bg-card/50 backdrop-blur-sm max-w-3xl mx-auto">
+        <Card className="border border-border/40 bg-card/50 backdrop-blur-sm max-w-3xl mx-auto mb-8">
           <CardHeader>
             <CardTitle className="text-xl flex items-center gap-2">
               <Award className="h-5 w-5 text-primary" /> Certifications
@@ -194,6 +166,33 @@ export function EducationSection() {
                   </div>
                   <span className="text-xs text-muted-foreground md:ml-4 mt-1 md:mt-0 whitespace-nowrap">
                     {cert.period}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Achievements Card */}
+        <Card className="border border-border/40 bg-card/50 backdrop-blur-sm max-w-3xl mx-auto">
+          <CardHeader>
+            <CardTitle className="text-xl flex items-center gap-2">
+              <Award className="h-5 w-5 text-primary" /> Achievements
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-col gap-2">
+              {achievementsData.map((ach, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col md:flex-row md:items-center justify-between py-2 px-1 border-b border-border/20 last:border-b-0"
+                >
+                  <div>
+                    <span className="font-semibold">{ach.title}:</span>{" "}
+                    <span>{ach.body}</span>
+                  </div>
+                  <span className="text-xs text-muted-foreground md:ml-4 mt-1 md:mt-0 whitespace-nowrap">
+                    {ach.period}
                   </span>
                 </div>
               ))}
