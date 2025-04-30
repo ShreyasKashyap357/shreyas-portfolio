@@ -5,12 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
 import { useState } from "react";
 
-// Define project data, including QuizWhiz
+// Define project data with images
 const projectsData = [
   {
     title: "EJ-InsightX",
     description: "Python-based ATM Electronic Journal (EJ) files parser that extracts valuable transaction data, providing comprehensive insights through data visualization and analysis.",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     tags: ["Python", "Data Analysis", "Parsing", "Visualization"],
     github: "#",
     demo: "#",
@@ -18,7 +18,7 @@ const projectsData = [
   {
     title: "Retail Insights Explorer",
     description: "E-commerce data analysis platform that helps businesses identify sales trends, customer behavior patterns, and inventory optimization opportunities through interactive dashboards.",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     tags: ["Python", "Pandas", "Data Visualization", "Dashboard"],
     github: "#",
     demo: "#",
@@ -26,7 +26,7 @@ const projectsData = [
   {
     title: "VoteAnalytica",
     description: "Election data visualization web app that presents voting patterns, demographic analysis, and result projections through intuitive interactive charts and geographical maps.",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     tags: ["Django", "D3.js", "Data Analysis", "Visualization"],
     github: "#",
     demo: "#",
@@ -34,7 +34,7 @@ const projectsData = [
   {
     title: "QuizWhiz",
     description: "A robust quiz and competition platform with college/school-wide and classroom features. Designed the backend and logic; used for interschool quizzes (mock UN, science olympiads, etc).",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     tags: ["Python", "Django", "Quiz Platform", "Education"],
     github: "#",
     demo: "#",
@@ -63,17 +63,18 @@ export function ProjectsSection() {
               onMouseLeave={() => setHoveredProject(null)}
             >
               <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-background/80"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <h3 className="text-2xl font-bold text-foreground">{project.title}</h3>
-                </div>
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/90"></div>
               </div>
               <CardHeader className="p-4 pb-0">
                 <CardTitle className="text-xl">{project.title}</CardTitle>
-                <CardDescription className="line-clamp-1">{project.description.substring(0, 60)}...</CardDescription>
               </CardHeader>
               <CardContent className="p-4 pt-2 flex-grow">
-                <p className="text-sm text-muted-foreground line-clamp-3">{project.description}</p>
+                <p className="text-sm text-muted-foreground">{project.description}</p>
                 <div className="flex flex-wrap gap-1.5 mt-4">
                   {project.tags.map((tag, tagIndex) => (
                     <Badge key={tagIndex} variant="outline" className="text-xs">
@@ -83,13 +84,17 @@ export function ProjectsSection() {
                 </div>
               </CardContent>
               <CardFooter className="p-4 pt-0 flex gap-2">
-                <Button variant="outline" size="sm" className="gap-1 flex-1">
-                  <Github className="h-4 w-4" />
-                  Code
+                <Button variant="outline" size="sm" className="gap-1 flex-1" asChild>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <Github className="h-4 w-4" />
+                    Code
+                  </a>
                 </Button>
-                <Button variant="default" size="sm" className="gap-1 flex-1">
-                  <ExternalLink className="h-4 w-4" />
-                  Demo
+                <Button variant="default" size="sm" className="gap-1 flex-1" asChild>
+                  <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="h-4 w-4" />
+                    Demo
+                  </a>
                 </Button>
               </CardFooter>
             </Card>

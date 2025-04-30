@@ -1,5 +1,6 @@
+
 import { Button } from "@/components/ui/button";
-import { Download, Video } from "lucide-react";
+import { Download, Video, FileText, ExternalLink } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 export function HeroSection() {
@@ -38,7 +39,7 @@ export function HeroSection() {
             Turning data into meaningful insights and building intelligent solutions.
           </p>
           
-          <div className="flex justify-center gap-4 mt-8">
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Button className="group" size="lg" asChild>
               <a
                 href="https://raw.githubusercontent.com/ShreyasKashyap357/shreyas-portfolio/main/My_Resume_LaTeX.pdf"
@@ -49,6 +50,16 @@ export function HeroSection() {
                 Download Resume
               </a>
             </Button>
+            <Button variant="secondary" size="lg" asChild>
+              <a
+                href="https://raw.githubusercontent.com/ShreyasKashyap357/shreyas-portfolio/main/My_Resume_LaTeX.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FileText className="mr-2 h-4 w-4" />
+                View Resume
+              </a>
+            </Button>
             <Button variant="outline" size="lg" asChild>
               <a
                 href="https://youtu.be/your-video-id"
@@ -56,7 +67,7 @@ export function HeroSection() {
                 rel="noopener noreferrer"
               >
                 <Video className="mr-2 h-4 w-4" />
-                Watch Video CV
+                View Video CV
               </a>
             </Button>
           </div>

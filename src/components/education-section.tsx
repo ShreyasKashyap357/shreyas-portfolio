@@ -1,6 +1,7 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Award, School, Calendar } from "lucide-react";
+import { Award, School, Calendar, ExternalLink } from "lucide-react";
 
 const educationData = [
   {
@@ -48,6 +49,18 @@ const certificationsData = [
     issuer: "NPTEL",
     period: "Jul 2024 - Oct 2024",
     link: "https://archive.nptel.ac.in/content/noc/NOC24/SEM2/Ecertificates/106/noc24-cs118/Course/NPTEL24CS118S167020253304303798.pdf"
+  },
+  {
+    title: "Data Analysis & Algorithms",
+    issuer: "Coursera",
+    period: "Jan 2024 - May 2024",
+    link: "https://www.coursera.org/certificates/data-analysis"
+  },
+  {
+    title: "Generative AI & ChatGPT",
+    issuer: "Udemy",
+    period: "Jan 2024 - May 2024",
+    link: "https://www.udemy.com/certificates/generative-ai"
   }
 ];
 
@@ -60,7 +73,7 @@ const achievementsData = [
   {
     title: "National Competitive Exam",
     body: "Qualified for JEE (Advanced)",
-    period: "7th Aug 2022"
+    period: "7th Aug '22"
   },
   {
     title: "Bharat Ko Jano Quiz Competition 2018",
@@ -150,17 +163,18 @@ export function EducationSection() {
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col md:flex-row md:items-center justify-between py-2 px-1 border-b border-border/20 last:border-b-0 hover:bg-accent/5 transition-colors"
+                  className="flex flex-col md:flex-row md:items-center justify-between py-2 px-1 border-b border-border/20 last:border-b-0 hover:bg-accent/5 transition-colors group"
                 >
-                  <div>
+                  <div className="flex items-center gap-1">
                     <span className="font-semibold">{cert.title}</span>
                     <span className="text-xs text-muted-foreground ml-2">
                       {cert.issuer}
                     </span>
                   </div>
-                  <span className="text-xs text-muted-foreground md:ml-4 mt-1 md:mt-0 whitespace-nowrap">
+                  <div className="flex items-center gap-1 text-xs text-muted-foreground md:ml-4 mt-1 md:mt-0 whitespace-nowrap">
                     {cert.period}
-                  </span>
+                    <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
                 </a>
               ))}
             </div>
