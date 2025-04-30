@@ -70,6 +70,16 @@ export function HeroSection() {
                 View Video CV
               </a>
             </Button>
+            <Button variant="outline" size="lg" asChild>
+              <a
+                href="https://youtu.be/your-video-id"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Download className="mr-2 h-4 w-4" />
+                Download Video CV
+              </a>
+            </Button>
           </div>
           
           <div className="mt-12 flex items-center justify-center">

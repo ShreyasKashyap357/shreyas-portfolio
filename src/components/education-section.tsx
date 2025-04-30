@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Award, School, Calendar, ExternalLink } from "lucide-react";
@@ -58,9 +57,9 @@ const certificationsData = [
   },
   {
     title: "Generative AI & ChatGPT",
-    issuer: "Udemy",
+    issuer: "Coursera",
     period: "Jan 2024 - May 2024",
-    link: "https://www.udemy.com/certificates/generative-ai"
+    link: "https://www.coursera.org/certificates/generative-ai"
   }
 ];
 
