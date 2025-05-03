@@ -52,7 +52,7 @@ export function HeroSection() {
             </Button>
             <Button variant="secondary" size="lg" asChild>
               <a
-                href="https://raw.githubusercontent.com/ShreyasKashyap357/shreyas-portfolio/main/My_Resume_LaTeX.pdf"
+                href="https://github.com/ShreyasKashyap357/shreyas-portfolio/blob/main/My_Resume_LaTeX.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -62,7 +62,7 @@ export function HeroSection() {
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a
-                href="https://youtu.be/your-video-id"
+                href="https://youtu.be/IYD9YCnuOJE"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -72,7 +72,7 @@ export function HeroSection() {
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a
-                href="https://youtu.be/your-video-id"
+                href="https://github.com/ShreyasKashyap357/shreyas-portfolio/raw/refs/heads/main/My%20Video%20CV.mp4"
                 target="_blank"
                 rel="noopener noreferrer"
               >

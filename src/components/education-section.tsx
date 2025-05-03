@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Award, School, Calendar, ExternalLink } from "lucide-react";
@@ -53,13 +54,13 @@ const certificationsData = [
     title: "Data Analysis & Algorithms",
     issuer: "Coursera",
     period: "Jan 2024 - May 2024",
-    link: "https://www.coursera.org/certificates/data-analysis"
+    link: "https://shreyaskashyap357.github.io/portfolio-certificates/"
   },
   {
     title: "Generative AI & ChatGPT",
     issuer: "Coursera",
     period: "Jan 2024 - May 2024",
-    link: "https://www.coursera.org/certificates/generative-ai"
+    link: "https://shreyaskashyap357.github.io/portfolio-certificates/"
   }
 ];
 
