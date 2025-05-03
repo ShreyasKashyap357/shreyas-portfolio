@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Award, School, Calendar, ExternalLink } from "lucide-react";
@@ -66,14 +65,9 @@ const certificationsData = [
 
 const achievementsData = [
   {
-    title: "Quizzes",
-    body: "Participated in multiple college-wide quizzes; Achieved 1st, 2nd, and 3rd prizes",
-    period: "2022-Present"
-  },
-  {
     title: "National Competitive Exam",
     body: "Qualified for JEE (Advanced)",
-    period: "7th Aug '22"
+    period: "7th Aug. 2022"
   },
   {
     title: "Bharat Ko Jano Quiz Competition 2018",
@@ -99,11 +93,6 @@ const achievementsData = [
     title: "Theatre De Rue",
     body: "Second Prize, Carnivesta, Gopal Sharma Memorial School",
     period: "20th Dec. 2017"
-  },
-  {
-    title: "Extracurricular Activities",
-    body: "Participated in acting and drama competitions; Secured 1st and 2nd prizes",
-    period: "8th-10th Std."
   }
 ];
 

@@ -30,22 +30,23 @@ export function ThemeProvider({
   storageKey = "theme",
   ...props
 }: ThemeProviderProps) {
-  const getInitialTheme = () => {
-    const stored = localStorage.getItem(storageKey);
-    if (stored === "dark" || stored === "light") return stored as Theme;
-    return defaultTheme;
-  };
+  const [theme, setTheme] = useState<Theme>(defaultTheme);
 
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+  useEffect(() => {
+    const root = window.document.documentElement;
+    const storedTheme = localStorage.getItem(storageKey);
+    
+    if (storedTheme === "dark" || storedTheme === "light") {
+      setTheme(storedTheme as Theme);
+    } else {
+      localStorage.setItem(storageKey, defaultTheme);
+    }
+  }, [defaultTheme, storageKey]);
 
   useEffect(() => {
     const root = window.document.documentElement;
     root.classList.remove("light", "dark");
-
     root.classList.add(theme);
-  }, [theme]);
-
-  useEffect(() => {
     localStorage.setItem(storageKey, theme);
   }, [theme, storageKey]);
 
